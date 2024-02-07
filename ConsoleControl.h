@@ -1,7 +1,6 @@
 #pragma once
 #include <mutex>
 #include <iostream>
-#include <mutex>
 #include <sstream>
 
 #define KB_ENTER 13

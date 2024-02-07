@@ -91,7 +91,7 @@ void RunServer()
 
 	if (listener.listen(3000) != sf::Socket::Done) 
 	{
-		std::cout << "Error on accept Client" << std::endl;
+		std::cout << "Error on start listener" << std::endl;
 		return;
 	}
 
