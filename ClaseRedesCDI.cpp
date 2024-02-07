@@ -18,6 +18,7 @@ int main()
 	do
 	{
 		mode = ConsoleControl::WaitForReadNextChar();
+
 	} while (mode != 'C' && mode != 'c' && mode != 'S' && mode != 's');
 
 	switch (mode) 
@@ -46,6 +47,8 @@ int main()
 void RunClient()
 {
 	std::cout << "Client";
+
+
 
 	/*sf::TcpSocket socket;
 	sf::Socket::Status status = socket.connect("10.40.2.193", port);
