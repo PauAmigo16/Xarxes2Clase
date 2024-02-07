@@ -49,7 +49,7 @@ void RunClient()
 {
 	std::cout << "Client";
 
-	sf::TcpSocket socket;
+	/*sf::TcpSocket socket;
 	sf::Socket::Status status = socket.connect("10.40.2.193", port);
 
 	if (status != sf::Socket::Done) 
@@ -79,14 +79,14 @@ void RunClient()
 		{
 			std::cout << std::endl << "Error sending message";
 		}
-	}
+	}*/
 }
 
 void RunServer()
 {
 	std::cout << "Server" << std::endl;
 
-	sf::TcpListener listener;
+	/*sf::TcpListener listener;
 
 	if (listener.listen(3000) != sf::Socket::Done) 
 	{
@@ -127,5 +127,5 @@ void RunServer()
 			}
 			std::cout << std::endl << message;
 		}
-	}
+	}*/
 }
