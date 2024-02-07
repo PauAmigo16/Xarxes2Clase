@@ -2,6 +2,8 @@
 #include <conio.h>
 #include <SFML/Network.hpp>
 
+#include "ConsoleControl.h"
+
 void RunClient();
 void RunServer();
 
