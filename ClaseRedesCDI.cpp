@@ -17,11 +17,7 @@ int main()
 
 	do
 	{
-		if (_kbhit())
-		{
-			mode = _getch();
-
-		}
+		mode = ConsoleControl::WaitForReadNextChar();
 	} while (mode != 'C' && mode != 'c' && mode != 'S' && mode != 's');
 
 	switch (mode) 
