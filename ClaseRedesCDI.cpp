@@ -2,7 +2,8 @@
 #include <conio.h>
 #include <SFML/Network.hpp>
 
-#include "ConsoleControl.h"
+#include "Chat.h"
+
 
 void RunClient();
 void RunServer();
@@ -21,24 +22,24 @@ int main()
 
 	} while (mode != 'C' && mode != 'c' && mode != 'S' && mode != 's');
 
-	switch (mode) 
+	switch (mode)
 	{
 	case 'c':
 	case 'C':
-		{
-			RunClient();
-		}
-		break;
+	{
+		RunClient();
+	}
+	break;
 	case's':
 	case 'S':
-		{
-			RunServer();
-		}
-		break;
+	{
+		RunServer();
+	}
+	break;
 	default:
 		break;
 	}
-	while (true) 
+	while (true)
 	{
 
 	}
@@ -48,85 +49,17 @@ void RunClient()
 {
 	std::cout << "Client";
 
+	std::cout << std::endl << "Set server IP -->";
 
+	std::string ip;
+	std:getline(std::cin, ip);
 
-	/*sf::TcpSocket socket;
-	sf::Socket::Status status = socket.connect("10.40.2.193", port);
-
-	if (status != sf::Socket::Done) 
-	{
-
-		std::cout << "Error on connect to server" << std::endl;
-		return;
-	}
-
-	while (true) 
-	{
-		std::cout << "Next Message: ";
-		std::string message;
-		std::getline(std::cin, message);
-
-		char data[100];
-
-		int stringSize = message.length();
-		for (int i = 0; i < stringSize; i++) 
-		{
-			//ESTEM TREBALLANT AMB CHARs
-			char c = message[i];
-			data[i] = c;
-		}
-
-		if (socket.send(data, 100) != sf::Socket::Done) 
-		{
-			std::cout << std::endl << "Error sending message";
-		}
-	}*/
+	Chat* chat = Chat::Client(ip, port);
 }
 
 void RunServer()
 {
 	std::cout << "Server" << std::endl;
 
-	/*sf::TcpListener listener;
-
-	if (listener.listen(3000) != sf::Socket::Done) 
-	{
-		std::cout << "Error on start listener" << std::endl;
-		return;
-	}
-
-	sf::IpAddress ipAddress = sf::IpAddress::getLocalAddress();
-	std::cout << "Listening on IP: " + ipAddress.toString() << std::endl;
-
-	sf::TcpSocket client;
-
-	if (listener.accept(client) != sf::Socket::Done) 
-	{
-		std::cout << "Error on accept Client" << std::endl;
-		return;
-	}
-
-	std::cout << "Client Connected" << client.getRemoteAddress().toString();
-
-	while (true) 
-	{
-		char data[100];
-		std::size_t received;
-
-		std::string message;
-
-		if (client.receive(data, 100, received) != sf::Socket::Done) 
-		{
-			std::cout << std::endl << "Error receive message";
-		}
-		else 
-		{
-			for (size_t i = 0; i < received; i++) 
-			{
-				char c = data[i];
-				message += c;
-			}
-			std::cout << std::endl << message;
-		}
-	}*/
+	Chat* chat = Chat::Server(port);
 }
