@@ -12,7 +12,7 @@ short port = 3000;
 
 int main()
 {
-	std::cout << "Select" << std::endl << "Client -> C" << std::endl << "Server -> S" << std::endl;
+	std::cout << "Select" << std::endl << "Client -> C" << std::endl << "Server -> S" ;
 
 	char mode = ' ';
 
@@ -59,7 +59,7 @@ void RunClient()
 
 void RunServer()
 {
-	std::cout << "Server" << std::endl;
+	std::cout << std::endl << "Server";
 
 	Chat* chat = Chat::Server(port);
 }
