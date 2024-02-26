@@ -8,6 +8,14 @@ class SocketManager
 public:
 	typedef std::function<void(TcpSocket* socket)> OnSocketConnected;
 
+	SocketManager(OnSocketConnected onSocketConnected);
+	~SocketManager();
+
+	void StartLoop();
+
+	bool StartListener(unsigned short port);
+	bool ConnectToServer(std::string ip, unsigned short port);
+
 private:
 	bool _isRunning = false;
 	std::mutex _isRunningMutex;
@@ -29,16 +37,5 @@ private:
 	void AddSocket(TcpSocket* socket);
 	void RemoveSocket(TcpSocket* socket);
 	void RemoveSocketAsync(TcpSocket* socket);
-
-
-
-public:
-	SocketManager(OnSocketConnected onSocketConnected);
-	~SocketManager();
-
-	void StartLoop();
-
-	bool StartListener(unsigned short port);
-	bool ConnectToServer(std::string ip, unsigned short port);
 };
 
