@@ -147,6 +147,8 @@
     <ClCompile Include="ConnectionAbstraction\TcpListener.cpp" />
     <ClCompile Include="ConnectionAbstraction\TcpSocket.cpp" />
     <ClCompile Include="ConsoleControl.cpp" />
+    <ClCompile Include="WindowsHelpers\Button.cpp" />
+    <ClCompile Include="WindowsHelpers\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chat.h" />
@@ -156,6 +158,8 @@
     <ClInclude Include="ConnectionAbstraction\TcpListener.h" />
     <ClInclude Include="ConnectionAbstraction\TcpSocket.h" />
     <ClInclude Include="ConsoleControl.h" />
+    <ClInclude Include="WindowsHelpers\Button.h" />
+    <ClInclude Include="WindowsHelpers\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
